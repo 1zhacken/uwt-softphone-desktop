@@ -1,0 +1,28 @@
+<div class="menu" [class.hidden]="callInProgress || incomingCall" [class.bordered]="menuService.selected != MenuOptions.Keypad">
+	<div class="menu-item" [class.active]="menuService.selected == MenuOptions.Keypad" (click)="menuService.selected = MenuOptions.Keypad">
+		<img [src]="'./assets/dialpad' + (menuService.selected == MenuOptions.Keypad ? '-active.svg' : '.svg')" alt="Keypad">
+		<div [class.active]="menuService.selected == MenuOptions.Keypad">Keypad</div>
+	</div>
+	<div class="menu-item" [class.active]="menuService.selected == MenuOptions.Recents" (click)="menuService.selected = MenuOptions.Recents">
+		<img [src]="'./assets/recents' + (menuService.selected == MenuOptions.Recents ? '-active.svg' : '.svg')" alt="Recents">
+		<div [class.active]="menuService.selected == MenuOptions.Recents">Recents</div>
+	</div>
+	<div class="menu-item" [class.active]="menuService.selected == MenuOptions.Contacts" (click)="menuService.selected = MenuOptions.Contacts">
+		<img [src]="'./assets/contacts' + (menuService.selected == MenuOptions.Contacts ? '-active.svg' : '.svg')" alt="Contacts">
+		<div [class.active]="menuService.selected == MenuOptions.Contacts">Contacts</div>
+	</div>
+	<div class="menu-item" [class.active]="menuService.selected == MenuOptions.Voicemail" (click)="menuService.selected = MenuOptions.Voicemail">
+		<div class="menu-badge">
+			<img [src]="'./assets/voicemail' + (menuService.selected == MenuOptions.Voicemail ? '-active.svg' : '.svg')" alt="Voicemail">
+			<div [hidden]="!(voicemailService.newMsgCount$ | async)" class="badge">{{ voicemailService.newMsgCount$ | async }}</div>
+		</div>
+		<div [class.active]="menuService.selected == MenuOptions.Voicemail">Voicemail</div>
+	</div>
+	<div class="menu-item" [class.active]="menuService.selected == MenuOptions.Settings" (click)="menuService.selected = MenuOptions.Settings">
+		<div class="menu-badge">
+			<img [src]="'./assets/settings' + (menuService.selected == MenuOptions.Settings ? '-active.svg' : '.svg')" alt="Settings">
+			<div class="badge" *ngIf="update.version">1</div>
+		</div>
+		<div [class.active]="menuService.selected == MenuOptions.Settings">Settings</div>
+	</div>
+</div>

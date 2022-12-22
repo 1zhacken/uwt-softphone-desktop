@@ -1,0 +1,66 @@
+div.container {
+	display: flex;
+	height: 100%;
+}
+
+div.status {
+	width: 100%;
+	color: #999;
+	font-size: 4vw;
+	margin: auto 5vw auto 5vw;
+}
+
+div.server-status {
+	height: 3vw;
+	width: 3vw;
+	border-radius: 1.5vw;
+	float: left;
+	margin: 1vw;
+}
+
+div.server-status.green {
+	background-color: rgb(0, 166, 81);
+}
+
+div.server-status.green.orange {
+	background-color: #e69506;
+}
+
+div.server-status.red {
+	background-color: rgb(238, 29, 35);
+}
+
+div.call-status {
+	float: left;
+	width: 85%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+div.status > div.call-duration {
+	text-align: right;
+	float: right;
+}
+
+div.status > div.call-duration.test-btn {
+	float: none;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	padding-top: 10px;
+	width: 100%;
+}
+
+div.status {
+	font-size: 19.2px;
+	margin: auto 24px auto 24px;
+}
+
+div.server-status {
+	height: 14.4px;
+	width: 14.4px;
+	border-radius: 7.2px;
+	margin: 4.8px;
+}

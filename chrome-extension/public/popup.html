@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="header"> GCF Click-to-Dial </div>
+    <div class="title"> Settings </div>
+    <br/><br>
+    <div class="settings-element">
+      <div> Enable on current site </div>
+      <label class="switch">
+        <input id="currentPageProcessingSwitch" type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <br/>
+    <div class="settings-element">
+      <div> Enable on current page </div>
+      <label class="switch">
+        <input id="oneTimeProcessingSwitch" type="checkbox" checked>
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <div id="connection-status-container">
+      <div id="connection-status"> No connection with the app </div>
+    </div>
+    
+    <script src="popup.js"></script>
+  </body>
+</html>

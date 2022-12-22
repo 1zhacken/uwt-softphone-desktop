@@ -1,0 +1,18 @@
+<div class="dial">
+	<form [class.fill]="testButton">
+		<div class="side">
+			<div *ngIf="!testButton && extensionsEnabled" class="extensions" [class.offline]="!extensionsConnected">
+				<img *ngIf="extensionsConnected" class="extensions" src="./assets/view-extensions.svg" alt="Show Extensions" (click)="showExtensions()">
+				<img *ngIf="!extensionsConnected" class="extensions" src="./assets/view-extensions-off.svg" alt="Show Extensions">
+			</div>
+		</div>
+		<input name="display" (keydown)="filterKey($event)" [(ngModel)]="display" type="text" (ngModelChange)="onDisplayChange($event)" [disabled]="testButton">
+		<div class="side">
+			<img [hidden]="(callDirection === null) || testButton" [src]="'./assets/call-' + (callDirection == CallDirection.Inbound ? 'received' : 'made') + '.svg'" alt="Call direction">
+		</div>
+	</form>
+	<div *ngIf="display && phonebookRecord && !testButton" class="contact">
+		{{ phonebookRecord.name }} <span>{{ phonebookRecord.label }}</span>
+	</div>
+	<div *ngIf="display && !phonebookRecord && !testButton && !isBase64Number" class="contact link" (click)="addNumber(display)">Add Number</div>
+</div>

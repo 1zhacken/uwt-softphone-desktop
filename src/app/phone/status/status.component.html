@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="status">
+		<div>
+			<div [ngClass]="{'server-status': true, 'green': availability, 'red': !availability, 'orange': callInProgress}"></div>
+			<div class="call-status">
+				{{ status }}
+			</div>
+		</div>
+		<div class="call-duration">
+			{{ timerService.timer$ | async }}
+		</div>
+	</div>
+</div>

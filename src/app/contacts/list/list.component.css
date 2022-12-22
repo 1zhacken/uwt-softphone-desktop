@@ -1,0 +1,30 @@
+div.contacts {
+	height: 90%;
+	overflow-y: auto;
+}
+
+div.contact {
+	height: 5vh;
+	padding: 0 30px 0 30px;
+	border-bottom: solid 0.5px #bbb;
+	display: flex;
+	cursor: pointer;
+}
+
+div.contact > div.name {
+	font-size: 5vw;
+	width: 100%;
+	margin: auto 0;
+	text-align: left;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+div.contact {
+	height: 42px;
+}
+
+div.contact > div.name {
+	font-size: 21px;
+}

@@ -1,0 +1,14 @@
+<div class="call-record">
+  <div class="caller-info" (click)="initiateCall()">
+    <div class="caller" [class.missed]="missedCall">{{ phonebookRecord ? phonebookRecord.name : callerId }}</div>
+    <div class="phone-label">{{ phonebookRecord ? phonebookRecord.label : 'Unknown' }}</div>
+  </div>
+  <div class="call-info">
+    <div class="timestamp">{{ utcTimestamp | timestamp }}</div>
+    <div class="duration">{{ durationSeconds | callDuration: missedCall }}</div>
+  </div>
+  <div class="contact-link">
+    <img *ngIf="phonebookRecord && !phonebookRecord.isExtension" (click)="viewContactInfo()" src="./assets/view-contact.svg" alt="View Contact">
+    <img *ngIf="!phonebookRecord" (click)="addNumber(callerId)" src="./assets/add-contact.svg" alt="Add Contact">
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="container">
+	<div class="header">
+		<h1>Settings</h1>
+	</div>
+	<form>
+		<div class="settings">
+			<div class="title">General</div>
+			<div class="form-row">
+				<div class="form-label">Ringtone</div>
+				<div class="dropdown">
+					<select name="ringtone" [(ngModel)]="selectedRingtone" (ngModelChange)="selectRingtone(ringtone.value)" #ringtone>
+						<ng-template ngFor let-ringtone [ngForOf]="ringtones">
+							<option>{{ ringtone }}</option>
+						</ng-template>
+					</select>
+				</div>
+			</div>
+		
+			<div class="title">Outgoing Caller ID</div>
+			<div class="form-row">
+				<div class="form-label">Country</div>
+				<div class="dropdown">
+					<select name="country" [(ngModel)]="selectedCountry" (ngModelChange)="selectFirstCallerId()">
+						<ng-template ngFor let-country [ngForOf]="countries">
+							<option>{{ country }}</option>
+						</ng-template>
+					</select>
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-label">Lines</div>
+				<div class="dropdown">
+					<select name="line" [(ngModel)]="selectedCallerId" (ngModelChange)="selectCallerId($event)">
+						<ng-template ngFor let-line [ngForOf]="getLines()">
+							<option>{{ line }}</option>
+						</ng-template>
+					</select>
+				</div>
+			</div>
+			<div class="title" *ngIf="!isProduction">Integrations</div>
+			<div class="form-row" *ngIf="!isProduction">
+				<div class="form-label"><img class="logo" src="../../assets/zoho-crm-logo.png" alt="Zoho CRM"></div>
+				<a [href]="getPhonebridgeUrl()" class="btn" target="_blank">Activate Phonebridge</a>
+			</div>			
+
+			<div class="form-row mt-50">
+				<div class="form-label">Security</div>
+				<div class="btn" (click)="logout()">Log out</div>
+			</div>
+
+			<div class="form-row" *ngIf="update.version">
+				<div class="update">
+					<p><strong>An update is available. Click to download <span class="link" (click)="createWindow()">version {{update.version}}</span></strong></p>								
+					<hr>
+					<div class="loader" *ngIf="progress.percentage">
+						<div class="loader-bar" [style.width]="progress.percentage"></div>
+						<span>{{progress.status}} <span *ngIf="progress.status=='Downloading'">{{progress.percentage}}</span></span>
+					</div>
+					<p class="more-info" *ngIf="update.description">More info...</p>
+					<div class="description" [innerHTML]="update.description"></div>
+				</div>
+			</div>
+
+			<!-- Version 2.3.2-->
+		</div>
+	</form>
+</div>

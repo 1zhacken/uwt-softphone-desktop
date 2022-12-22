@@ -1,0 +1,44 @@
+<div class="header">
+  <div class="header-content" [class.hidden]="(contactsController.selectedView$ | async) != ContactViews.List">
+    <div class="search" *ngIf="filterEnabled; else noFilter">
+      <img class="cancel-search" src="./assets/cancel.svg" alt="Cancel Search" (click)="toggleFilter()">
+      <input @beginSearch uwtAutoFocus type="text" placeholder="Search" name="search" id="search" [(ngModel)]="filterQuery" (ngModelChange)="updateFilter()">
+    </div>
+    <ng-template #noFilter>
+      <img class="search-contact" src="./assets/search.svg" alt="Search Contacts" (click)="toggleFilter()">
+      <h1>{{ listTitle }}</h1>
+      <img class="add-contact" src="./assets/add.svg" alt="Add Contact" (click)="addContact()">
+    </ng-template>
+  </div>
+  <div class="header-content view-contact" *ngIf="(contactsController.selectedView$ | async) == ContactViews.Details">
+    <div class="side left" (click)="viewContacts()">
+      <div class="compound-side">
+        <img src="./assets/arrow-back.svg" alt="Back">
+        <div>Contacts</div>
+      </div>
+    </div>
+    <div class="contact-name">
+      <div class="name">
+        {{ contact.firstName }} {{ contact.lastName }}
+      </div>
+      <div class="company">
+        {{ contact.company }}
+      </div>
+    </div>
+    <div class="side right" (click)="edit()">Edit</div>
+  </div>
+  <div class="header-content view-contact" *ngIf="(contactsController.selectedView$ | async) == ContactViews.Edit">
+    <div class="side left" (click)="cancel()">Cancel</div>
+    <div class="contact-name">
+      <div class="name">
+        {{ contact.firstName }} {{ contact.lastName }}
+      </div>
+      <div class="company">
+        {{ contact.company }}
+      </div>
+    </div>
+    <div class="side right" >
+      <span *ngIf="(contactsController.hasUnsavedChanges$ | async)" (click)="save()">Save</span>
+    </div>
+  </div>
+</div>

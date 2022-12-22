@@ -1,0 +1,24 @@
+<div class="date-selector">
+  <div class="select">
+    <select class="month" name="month" (change)="onMonthSelect($event.target.value)">
+      <ng-template ngFor let-m [ngForOf]="months" let-i="index">
+        <option [value]="i" [selected]="isMonthSelected(i)">{{ m }}</option>
+      </ng-template>
+    </select>
+  </div>
+  <div class="select">
+    <select class="day" name="day" (change)="onDaySelect($event.target.value)">
+      <ng-template ngFor let-d [ngForOf]="days">
+        <option [selected]="isDaySelected(d)">{{ d }}</option>
+      </ng-template>
+    </select>
+  </div>
+  <div class="select">
+    <select class="year" name="year" (change)="onYearSelect($event.target.value)">
+      <option value="1900" [selected]="isYearSelected(1900)">----</option>
+      <ng-template ngFor let-y [ngForOf]="years">
+        <option [selected]="isYearSelected(y)">{{ y }}</option>
+      </ng-template>
+    </select>
+  </div>
+</div>

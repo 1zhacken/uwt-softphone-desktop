@@ -1,0 +1,138 @@
+div.header {
+	height: 10%;
+	border-bottom: solid 0.5px #bbb;
+	box-sizing: border-box;
+	position: relative;
+}
+
+div.header-content.hidden {
+	display: none;
+}
+
+div.header-content {
+	display: flex;
+	height: 100%;
+	padding: 0 15px;
+}
+
+div.search {
+	position: relative;
+	width: 100%;
+	height: 38.4px;
+	margin: auto;
+}
+
+input#search {
+	width: 100%;
+	font-size: 20px;
+	padding: 8px 8px 8px 40px;
+	box-sizing: border-box;
+	height: 38.4px;
+	border-radius: 20px;
+	border: 1px solid #ccc;
+}
+
+img.cancel-search {
+	position: absolute;
+	left: 5px;
+	width: 31px;
+	top: 4px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+h1 {
+	font-size: 8vw;
+	text-align: center;
+	margin: auto 0;
+	padding: 0;
+	color: #36567a;
+	width: 100%;
+}
+
+img.add-contact {
+	position: absolute;
+	width: 8%;
+	left: calc(92% - 15px);
+	top: 24%;
+	cursor: pointer;
+}
+
+img.search-contact {
+	position: absolute;
+	width: 8%;
+	left: 15px;
+	top: 24%;
+	cursor: pointer;
+}
+
+div.side.left {
+	text-align: left;
+}
+
+div.side.right {
+	text-align: right;
+}
+
+div.compound-side {
+	display: flex;
+}
+
+div.compound-side > img {
+	width: 4vw;
+}
+
+div.compound-side > div {
+	margin: 0 -5px;
+}
+
+div.view-contact > div.side {
+	font-size: 4vw;
+	width: 20%;
+	margin: auto;
+	color: #e69506;
+	cursor: pointer;
+}
+
+div.view-contact > div.side.disabled {
+	color: #999;
+	font-weight: 300;
+	cursor: default;
+}
+
+div.view-contact > div.contact-name {
+	font-size: 6vw;
+	text-align: center;
+	color: #36567a;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	margin: auto 0;
+	width: 60%;
+}
+
+div.view-contact > div.contact-name > div.company {
+	color: #999;
+	font-size: 3.5vw;
+	font-weight: 300;
+}
+
+h1 {
+	font-size: 38.4px;
+}
+
+div.compound-side > img {
+	width: 18px;
+}
+
+div.view-contact > div.side {
+	font-size: 18px;
+}
+
+div.view-contact > div.contact-name {
+	font-size: 22px;
+}
+
+div.view-contact > div.contact-name > div.company {
+	font-size: 16px;
+}

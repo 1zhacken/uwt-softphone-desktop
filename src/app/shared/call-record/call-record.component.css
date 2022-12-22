@@ -1,0 +1,55 @@
+div.call-record {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+div.caller-info {
+	width: 60%;
+	text-align: left;
+	margin: auto 0;
+	cursor: pointer;
+}
+
+div.call-info {
+	width: 30%;
+	margin: auto 0;
+	text-align: right;
+	padding: 0 20px;
+}
+
+div.contact-link {
+	width: 10%;
+	margin: auto 0;
+}
+
+div.contact-link > img {
+	cursor: pointer;
+}
+
+div.contact-link > img:hover {
+	filter: brightness(130%);
+}
+
+div.caller {
+	font-size: 20px;
+}
+
+div.phone-label {
+	font-size: 18px;
+	font-weight: 300;
+	color: #999;
+}
+
+div.timestamp, div.duration {
+	font-size: 16px;
+	font-weight: 300;
+}
+
+div.duration {
+	color: #999;
+}
+
+div.missed {
+	color: rgb(238, 29, 35);
+}

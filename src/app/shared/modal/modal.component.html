@@ -1,0 +1,9 @@
+<div *ngIf="show" class="modal-container">
+  <div class="modal">
+    <div class="title" *ngIf="modalService.title">{{ modalService.title }}</div>
+    <ng-template ngFor let-option [ngForOf]="modalService.options" let-i="index">
+      <div class="option" (click)="selectOption(i)">{{ option }}</div>
+    </ng-template>
+  </div>
+</div>
+<div *ngIf="show" class="overlay" (click)="dismiss()"></div>

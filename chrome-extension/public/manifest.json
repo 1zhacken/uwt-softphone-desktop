@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "GCF Click-to-Dial",
+  "version": "0.1",
+  "description": "",
+  "icons": {
+    "16": "icons/GCF-icon.png",
+    "32": "icons/GCF-icon.png",
+    "48": "icons/GCF-icon.png",
+    "128": "icons/GCF-icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "action": {
+    "default_title": "GCF Click-to-Dial",
+    "default_icon": "icons/GCF-icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle",
+      "js": [
+        "contentScript.js"
+      ],
+      "css": ["contentStyle.css"]
+    }
+  ],
+  "web_accessible_resources": [{ 
+    "resources": ["call.svg", "contentStyle.css"],
+    "matches": ["<all_urls>"]
+  }]
+}

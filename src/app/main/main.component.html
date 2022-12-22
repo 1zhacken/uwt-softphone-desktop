@@ -1,0 +1,27 @@
+<div *ngIf="!loading && !testButtonMode" class="container">
+  <div class="header">
+    <uwt-header></uwt-header>
+  </div>
+  <div class="center">
+    <uwt-phone [hidden]="menuService.selected != menuOptions.Keypad"></uwt-phone>
+    <uwt-settings [hidden]="menuService.selected != menuOptions.Settings"></uwt-settings>
+    <uwt-recents *ngIf="!phonebookLoading" [hidden]="menuService.selected != menuOptions.Recents"></uwt-recents>
+    <uwt-voicemail *ngIf="!phonebookLoading" [hidden]="menuService.selected != menuOptions.Voicemail"></uwt-voicemail>
+    <uwt-contacts [hidden]="menuService.selected != menuOptions.Contacts"></uwt-contacts>
+  </div>
+  <div class="footer">
+    <uwt-menu></uwt-menu>
+  </div>
+  
+  <uwt-modal></uwt-modal>
+  <uwt-extensions></uwt-extensions>
+</div>
+
+<div *ngIf="!loading && testButtonMode" class="test-button">
+  <div class="header">
+    <uwt-header></uwt-header>
+  </div>
+  <div class="body">
+    <uwt-phone testButton="true"></uwt-phone>
+  </div>
+</div>

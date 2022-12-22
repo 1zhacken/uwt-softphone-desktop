@@ -1,0 +1,33 @@
+div.logo {
+	text-align: center;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+div.logo > img {
+	margin: 1vh 1vw 1vh 1vw;
+}
+
+div.test-btn {
+	text-align: center;
+}
+
+div.test-btn > div {
+	color: #999;
+	margin-top: 10px;
+}
+
+div.test-btn > img {
+	display: none;
+}
+
+div.test-btn > img.show {
+	display: inherit;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div.logo > a > img {
+	width: 385px;
+	margin: 20px auto 0 auto;
+}

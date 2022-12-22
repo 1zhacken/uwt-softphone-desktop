@@ -1,0 +1,74 @@
+<div class="details">
+  <form #f="ngForm" novalidate>
+    <div class="section">
+      <input type="text" name="firstName" id="firstName" placeholder="First Name" [(ngModel)]="contact.firstName" (ngModelChange)="onEdit()">
+      <input type="text" name="lastName" id="lastName" placeholder="Last Name" [(ngModel)]="contact.lastName" (ngModelChange)="onEdit()">
+      <input type="text" name="company" id="company" placeholder="Company" [(ngModel)]="contact.company" (ngModelChange)="onEdit()">
+    </div>
+    <div class="section">
+      <div class="title">Phone Numbers</div>
+      <div class="detail" *ngFor="let pn of phoneNumbers; let i=index">
+        <img (click)="removeDetail(pn, phoneNumbers)" class="remove" src="./assets/remove-circle.svg" alt="Remove phone number">
+        <input class="label" type="text" [name]="'phoneLabel_'+i" [id]="'phoneLabel_'+i" [(ngModel)]="pn.label" (ngModelChange)="onEdit()" required>
+        <input class="value" type="text" placeholder="Phone Number" [name]="'phoneValue_'+i" [id]="'phoneValue_'+i" [(ngModel)]="pn.value" (ngModelChange)="onEdit()" required>
+      </div>
+      <div class="add-detail">
+        <img (click)="addDetail(phoneNumbers, DetailType.Phone)" src="./assets/add-circle.svg" alt="Add phone number">
+        <div>Phone number</div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="title">Emails</div>
+      <div class="detail" *ngFor="let e of emails; let i=index">
+        <img (click)="removeDetail(e, emails)" class="remove" src="./assets/remove-circle.svg" alt="Remove phone number">
+        <input class="label" type="text" [name]="'emailLabel_'+i" [id]="'emailLabel_'+i" [(ngModel)]="e.label" (ngModelChange)="onEdit()" required>
+        <input class="value" type="text" placeholder="Email" [name]="'emailValue_'+i" [id]="'emailValue_'+i" [(ngModel)]="e.value" (ngModelChange)="onEdit()" required>
+      </div>
+      <div class="add-detail">
+        <img (click)="addDetail(emails, DetailType.Email)" src="./assets/add-circle.svg" alt="Add email">
+        <div>Email</div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="title">Addresses</div>
+      <div class="detail" *ngFor="let a of addresses; let i=index">
+        <img (click)="removeDetail(a, addresses)" class="remove" src="./assets/remove-circle.svg" alt="Remove phone number">
+        <input class="label" type="text" [name]="'addressLabel_'+i" [id]="'addressLabel_'+i" [(ngModel)]="a.label" (ngModelChange)="onEdit()" required>
+        <textarea class="address" rows="4" placeholder="Address" [name]="'addressValue_'+i" [id]="'addressValue_'+i" [(ngModel)]="a.value" (ngModelChange)="onEdit()" required></textarea>
+      </div>
+      <div class="add-detail">
+        <img (click)="addDetail(addresses, DetailType.Address)" src="./assets/add-circle.svg" alt="Add address">
+        <div>Address</div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="title">Notes</div>
+      <div class="detail" *ngFor="let n of notes; let i=index">
+        <img (click)="removeDetail(n, notes)" class="remove" src="./assets/remove-circle.svg" alt="Remove phone number">
+        <input class="label" type="text" placeholder="Title" [name]="'noteLabel_'+i" [id]="'noteLabel_'+i" [(ngModel)]="n.label" (ngModelChange)="onEdit()" required>
+        <textarea class="note" rows="6" placeholder="Note" [name]="'noteValue_'+i" [id]="'noteValue_'+i" [(ngModel)]="n.value" (ngModelChange)="onEdit()" required></textarea>
+      </div>
+      <div class="add-detail">
+        <img (click)="addDetail(notes, DetailType.Note)" src="./assets/add-circle.svg" alt="Add note">
+        <div>Note</div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="title">Events</div>
+      <div class="detail" *ngFor="let d of dates; let i=index">
+        <img (click)="removeDetail(d, dates)" class="remove" src="./assets/remove-circle.svg" alt="Remove phone number">
+        <input class="label" type="text" placeholder="Description" [name]="'dateLabel_'+i" [id]="'dateLabel_'+i" [(ngModel)]="d.label" (ngModelChange)="onEdit()" required>
+        <uwt-date-selector [name]="'dateValue_'+i" [id]="'dateValue_'+i" [(ngModel)]="d.value" (ngModelChange)="onEdit()"></uwt-date-selector>
+      </div>
+      <div class="add-detail">
+        <img (click)="addDetail(dates, DetailType.Date)" src="./assets/add-circle.svg" alt="Add date">
+        <div>Event</div>
+      </div>
+    </div>
+    <div *ngIf="contact.id" class="section delete">
+      <div [class.hidden]="!isDeleting" class="btn cancel-btn" (click)="cancelDeletion()">Cancel Deletion</div>
+      <div [class.hidden]="!isDeleting" class="btn confirm-btn" (click)="confirmDeletion()">Confirm Deletion</div>
+      <div *ngIf="!isDeleting" class="btn delete-btn" (click)="delete()">Delete Contact</div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,7 @@
+<div class="contacts">
+  <div *ngFor="let c of getContacts()" class="contact" (click)="viewDetails(c)">
+    <div class="name">
+      {{ c.firstName }} {{ c.lastName }}
+    </div>
+  </div>
+</div>

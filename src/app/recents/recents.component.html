@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="header">
+    <div class="search-active" *ngIf="displaySearchBar; else noSearchBar">
+      <img class="done" src="./assets/done.svg" alt="Done" (click)="displaySearchBar = false">
+      <input @beginSearch uwtAutoFocus type="text" placeholder="Search" name="search" id="search" [(ngModel)]="searchQuery" (ngModelChange)="contactId = 0">
+    </div>
+    <ng-template #noSearchBar>
+      <div class="search">
+        <img src="./assets/search.svg" alt="Search" (click)="displaySearchBar = true">
+        <div *ngIf="searchQuery || contactId" class="badge">!</div>
+      </div>
+      <div class="filter">
+        <div class="slider"
+          [class.all]="callType == CallType.All"
+          [class.inbound]="callType == CallType.Inbound"
+          [class.outbound]="callType == CallType.Outbound"
+          [class.missed]="callType == CallType.Missed">
+        </div>
+        <button class="filter-by" [class.active]="callType == CallType.All" (click)="filterCallsByType(CallType.All)">All</button>
+        <button class="filter-by" [class.active]="callType == CallType.Inbound" (click)="filterCallsByType(CallType.Inbound)">Inbound</button>
+        <button class="filter-by" [class.active]="callType == CallType.Outbound" (click)="filterCallsByType(CallType.Outbound)">Outbound</button>
+        <button class="filter-by" [class.active]="callType == CallType.Missed" (click)="filterCallsByType(CallType.Missed)">Missed</button>
+      </div>
+    </ng-template>
+  </div>
+  <div class="recents">
+    <ng-template ngFor let-rc [ngForOf]="recentCalls">
+      <div *ngIf="shouldDisplayCall(rc)" class="call">
+        <div class="direction">
+          <img [src]="'./assets/call-' + (rc.incoming ? 'received' : 'made') + '.svg'" alt="Call direction">
+        </div>
+        <div class="call-record">
+          <uwt-call-record
+            (contact)="rc.record = $event"
+            [callerId]="rc.number"
+            [durationSeconds]="rc.durationSeconds"
+            [missedCall]="rc.incoming && rc.durationSeconds == 0"
+            [utcTimestamp]="rc.utcTimestamp">
+          </uwt-call-record>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

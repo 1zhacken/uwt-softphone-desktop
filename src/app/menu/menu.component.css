@@ -1,0 +1,71 @@
+div.menu {
+	display: flex;
+	width: 100%;
+	padding: 1vh 0 1vh 0;
+	transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+	border-top: solid 0.5px #fff; /* too late to use box-sizing */
+}
+
+div.menu.bordered {
+	border-top: solid 0.5px #bbb;
+}
+
+div.menu.hidden {
+	visibility: hidden;
+	opacity: 0;
+}
+
+div.menu:not(.hidden) {
+	visibility: visible;
+	opacity: 1;
+	transition-delay: 0s;
+}
+
+div.menu-item {
+	width: calc(100% / 3);
+	text-align: center;
+	color: #999;
+	font-size: 4vw;
+	cursor: pointer;
+}
+
+div.menu-item.active {
+	cursor: default;
+}
+
+div.menu-badge {
+	position: relative;
+}
+
+div.menu-item img {
+	width: 50%;
+}
+
+div.menu-badge > div.badge {
+	position: absolute;
+	top: 10%;
+	left: 65%;
+	height: 1.5vh;
+	width: 1.5vh;
+	border-radius: 1vh;
+	background-color: rgb(238, 29, 35);
+	color: #fff;
+	font-size: 1.25vh;
+	padding: 0.2vh;
+}
+
+div.menu-item > div.active {
+	color: #e69506;
+}
+
+div.menu-item {
+	font-size: 19.2px;
+}
+
+div.menu-item:not(.active):hover {
+	filter: invert(100%) contrast(150%);
+}
+
+div.menu-item:not(.active):hover > div.menu-badge > div.badge {
+	filter: invert(100%) contrast(66.67%);
+}

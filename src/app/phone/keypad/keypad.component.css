@@ -1,0 +1,68 @@
+div.container {
+	display: flex;
+	height: 100%;
+}
+
+div.keypad {
+	height: 100%;
+	width: 80%;
+	margin: auto 10% auto 10%;
+}
+
+div.keypad-row {
+	height: 25%;
+	width: 100%;
+	color: #36567a;
+	font-size: 38.4px;
+	display: flex;
+}
+
+div.key {
+	height: 100%;
+	width: calc(100% / 3);
+	cursor: pointer;
+	display: flex;
+}
+
+div.key.center {
+	border-left: solid 1px #ddd;
+	border-right: solid 1px #ddd;
+}
+
+div.key-content {
+	margin: auto;
+	text-align: center;
+}
+
+div.number, div.alpha {
+	font-family: 'Gothic A1', sans-serif;
+	font-weight: 500;
+}
+
+div.alpha {
+	font-size: 14.4px;
+	letter-spacing: 2px;
+	margin-right: -2px;
+	font-weight: 300;
+}
+
+div.key:active {
+	box-shadow: inset 0 0 0 0.5px #bbb, inset 1px 1px 3px 0px #888;
+}
+
+div.keypad-row:nth-child(2) {
+	border-top: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
+}
+
+div.keypad-row:nth-child(3) {
+	border-bottom: solid 1px #ddd;
+}
+
+div.key:hover {
+	box-shadow: inset 0 0 0 0.5px #bbb, 1px 1px 3px 0px #888;
+}
+
+div.key:active {
+	box-shadow: inset 0 0 0 0.5px #bbb, inset 1px 1px 3px 0px #888;
+}

@@ -1,0 +1,2 @@
+<uwt-details *ngIf="!edit && details !== undefined" [contact]="contact" [details]="details"></uwt-details>
+<uwt-edit *ngIf="edit && details !== undefined" [contact]="contact" [details]="details" (updatedDetails)="updateDetails($event)"></uwt-edit>

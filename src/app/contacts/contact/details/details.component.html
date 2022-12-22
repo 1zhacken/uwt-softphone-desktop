@@ -1,0 +1,42 @@
+<div class="details">
+  <div class="section" *ngIf="phoneNumbers.length">
+    <div class="title-button">
+      <div class="title">Phone Numbers</div>
+      <div class="button" (click)="viewRecentCalls()">View Recent Calls</div>
+    </div>
+    <div class="detail" *ngFor="let pn of phoneNumbers">
+      <div class="label">{{ pn.label }}</div>
+      <div class="value link" (click)="initiateCall(pn.value)">
+        {{  replacePhoneNumber(pn.value) }}
+      </div>
+    </div>
+  </div>
+  <div class="section" *ngIf="emails.length">
+    <div class="title">Emails</div>
+    <div class="detail" *ngFor="let e of emails">
+      <div class="label">{{ e.label }}</div>
+      <div class="value link"><a [href]="'mailto:' + e.value">{{ e.value }}</a></div>
+    </div>
+  </div>
+  <div class="section" *ngIf="addresses.length">
+    <div class="title">Addresses</div>
+    <div class="detail" *ngFor="let a of addresses">
+      <div class="label">{{ a.label }}</div>
+      <div class="value multiline">{{ a.value }}</div>
+    </div>
+  </div>
+  <div class="section" *ngIf="notes.length">
+    <div class="title">Notes</div>
+    <div class="detail" *ngFor="let n of notes">
+      <div class="label">{{ n.label }}</div>
+      <div class="value note multiline">{{ n.value }}</div>
+    </div>
+  </div>
+  <div class="section" *ngIf="dates.length">
+    <div class="title">Events</div>
+    <div class="detail" *ngFor="let d of dates">
+      <div class="label">{{ d.label }}</div>
+      <div class="value">{{ d.value | detailDate }}</div>
+    </div>
+  </div>
+</div>

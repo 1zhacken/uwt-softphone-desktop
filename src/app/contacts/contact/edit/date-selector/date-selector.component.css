@@ -1,0 +1,38 @@
+div.date-selector {
+ display: flex;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 1px solid #ddd !important;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+select.month {
+  border-radius: 5px 0 0 5px;
+  text-align: left;
+}
+
+select.day {
+  border-radius: 0;
+  border-left: none !important;
+  border-right: none !important;
+  text-align: center;
+}
+
+select.year {
+  border-radius: 0 5px 5px 0;
+  text-align: center;
+}
+
+select::-ms-expand {
+  display: none;
+}
+

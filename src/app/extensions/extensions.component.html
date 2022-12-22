@@ -1,0 +1,29 @@
+<div *ngIf="show" class="container">
+  <div class="modal">
+    <div class="header">
+      <div class="my-extension">
+        <div class="name">{{ myExtension.name }}</div>
+        <div class="number">{{ myExtension.number }}</div>
+      </div>
+    </div>
+    <div class="extensions">
+      <ng-template ngFor let-extension [ngForOf]="extensions" let-i="index">
+        <div [ngClass]="'extension ' + extension.status">
+          <div class="status">
+            <div [ngClass]="'status-light ' + extension.status"></div>
+          </div>
+          <div class="number">{{ extension.number }}</div>
+          <div class="name"> {{ extension.name }}</div>
+          <div class="action-btn">
+            <img (click)="call(extension)" *ngIf="displayCallButton(extension)" src="./assets/button-call.svg" alt="Call">
+            <img (click)="transfer(extension)" *ngIf="displayTransferButton(extension)" src="./assets/button-transfer.svg" alt="Transfer">
+          </div>
+        </div>
+      </ng-template>
+    </div>
+    <div class="footer">
+      <div class="btn" (click)="dismiss()">Close</div>
+    </div>
+  </div>
+</div>
+<div *ngIf="show" class="overlay" (click)="dismiss()"></div>

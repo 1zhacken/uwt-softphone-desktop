@@ -1,0 +1,147 @@
+div.details {
+  font-size: 16px;
+  height: 90%;
+  overflow-y: auto;
+}
+
+div.section {
+  border-bottom: solid 0.5px #bbb;
+  padding: 1vh 30px;
+}
+
+div.section:last-of-type {
+  border: none;
+}
+
+div.title {
+  font-size: 18px;
+  color: #36567a;
+  margin-bottom: 0.6vh;
+}
+
+div.detail {
+  margin-bottom: 0.4vh;
+  position: relative;
+}
+
+div.detail > img.remove {
+  position: absolute;
+  top: 10px;
+  left: 3px;
+  width: 20px;
+  cursor: pointer;
+}
+
+input {
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 0.4vh;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px 15px 8px 15px;
+}
+
+input:focus, textarea:focus {
+  border: solid 1px #aaa;
+}
+
+input.label {
+  font-size: 14px;
+  padding: 5px 5px 5px 26px;
+  margin-top: 0.5vh;
+}
+
+input.value {
+  padding: 5px;
+}
+
+input.ng-invalid.ng-dirty, input.ng-invalid.ng-touched {
+ border: 1px solid rgb(238, 29, 35);
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 0.4vh;
+  box-sizing: border-box;
+}
+
+textarea.ng-invalid.ng-dirty, textarea.ng-invalid.ng-touched {
+  border: 1px solid rgb(238, 29, 35);
+}
+
+div.label {
+  font-size: 14px;
+  color: #999;
+}
+
+div.value {
+  color: black;
+}
+
+div.value.link {
+  cursor: pointer;
+}
+
+div.value.link:hover {
+  color: #e69506;
+}
+
+div.add-detail {
+  display: flex;
+}
+
+div.add-detail > img {
+  margin: 0 3px;
+  width: 20px;
+  cursor: pointer;
+}
+
+div.add-detail > div {
+  font-size: 14px;
+  margin: auto 0;
+}
+
+div.section.delete {
+  display: flex;
+}
+
+div.btn {
+  font-size: 20px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 1s ease-in-out;
+}
+
+div.btn.hidden {
+  display: hidden;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 0px;
+  border: none;
+  opacity: 0;
+}
+
+div.delete-btn {
+  background-color: rgb(238, 29, 35);
+  color: white;
+}
+
+div.confirm-btn {
+  background-color: rgb(238, 29, 35);
+  color: white;
+  font-weight: 500;
+}
+
+div.cancel-btn {
+  color: #999;
+  border: solid 1px #999;
+  font-weight: 300;
+  margin-right: 10px;
+}

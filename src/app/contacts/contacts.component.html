@@ -1,0 +1,5 @@
+<div class="container">
+	<uwt-header></uwt-header>
+	<uwt-list [class.hidden]="view != ContactViews.List" [contacts]="contacts"></uwt-list>
+	<uwt-contact *ngIf="view != ContactViews.List" [contact]="contactsController.contact$ | async" [edit]="view == ContactViews.Edit"></uwt-contact>
+</div>

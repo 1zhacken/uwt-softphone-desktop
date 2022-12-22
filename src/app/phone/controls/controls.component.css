@@ -1,0 +1,78 @@
+div.container {
+	display: flex;
+	height: 100%;
+}
+
+div.phone-controls {
+	width: 80%;
+	margin: auto 10% auto 10%;
+}
+
+div.phone-controls > div {
+	display: flex;
+}
+
+div.col-3 {
+	width: calc(100% / 3);
+	margin: auto;
+	text-align: center;
+}
+
+img {
+	cursor: pointer;
+}
+
+img.hidden {
+	display: none;
+}
+
+img.button {
+	width: 17vw;
+}
+
+img.button.disabled {
+	cursor: default;
+	filter: grayscale(60%) opacity(60%);
+}
+
+img.backspace {
+	width: 10vw;
+}
+
+img.backspace:active {
+	filter: invert(80%);
+}
+
+div.button-text {
+	color: #36567a;
+	font-size: 4vw;
+}
+
+img.button {
+	width: 81.6px;
+}
+
+img.backspace {
+	width: 48px;
+}
+
+img.button:hover {
+	filter: contrast(150%);
+}
+
+img.button.gray:hover {
+	filter: contrast(80%);
+}
+
+img.backspace:hover {
+	filter: invert(30%) contrast(150%);
+}
+
+img.backspace:active {
+	filter: invert(80%);
+}
+
+div.button-text {
+	font-size: 19.2px;
+}
+

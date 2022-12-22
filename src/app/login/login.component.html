@@ -1,0 +1,35 @@
+<div class="content">
+  <div class="logo">
+    <div class="uwt">
+      <img src="./assets/uwt-logo.svg" alt="UWT Logo">
+    </div>
+    <div class="gcf">
+      <img src="./assets/gcf-logo.svg" alt="GCF Logo">
+    </div>
+  </div>
+  <form>
+    <div class="form-content">
+      <div class="form-title">Login</div>
+      <div class="form-control">
+        <input placeholder="UserID" type="text" name="accessNumber" id="accessNumber" [(ngModel)]="accessNumber">
+      </div>
+      <div class="form-control">
+        <input placeholder="Password" type="password" name="password" id="password" [(ngModel)]="password">
+      </div>
+      <div class="form-control">
+        <button (click)="doLogin()" [disabled]="!accessNumber || !password">Login</button>
+        <div class="form-footer">
+          <div class="checkbox-group">
+            <div class="checkbox">
+              <input type="checkbox" name="rememberAccessNumber" id="rememberAccessNumber" [(ngModel)]="rememberAccessNumber">
+            </div>
+            <div class="checkbox-label">
+              <label for="rememberAccessNumber">Remember me</label>
+            </div>
+          </div>
+          <div class="error">{{ error ? error : '&nbsp;'}}</div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

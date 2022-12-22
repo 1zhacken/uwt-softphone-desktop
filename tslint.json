@@ -1,0 +1,4 @@
+{ "rules": {
+    "deprecation": {
+      "severity": "warning"
+    }, "no-var-keyword": false } }

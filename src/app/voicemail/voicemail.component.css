@@ -1,0 +1,168 @@
+div.container {
+	height: 100%;
+}
+
+div.header {
+	height: 10%;
+	border-bottom: solid 0.5px #bbb;
+	box-sizing: border-box;
+	display: flex;
+}
+
+h1 {
+	font-size: 8vw;
+	text-align: center;
+	margin: auto 0;
+	padding: 0;
+	color: #36567a;
+	width: 100%;
+}
+
+div.voicemails {
+	height: 90%;
+	font-size: 3.5vw;
+	overflow-y: auto;
+}
+
+div.voicemail {
+	height: 10vh;
+	padding: 0 10px;
+	border-bottom: solid 0.5px #bbb;
+}
+
+div.playback-control {
+	text-align: left;
+	margin: auto 0 auto 0;
+	height: 100%;
+	width: 15%;
+	position: relative;
+}
+
+div.playback-control > img {
+	height: 4vh;
+	position: absolute;
+	top: calc(50% - 4vh / 2);
+	left: 0;
+}
+
+div.number-duration {
+	width: 70%;
+	text-align: left;
+	margin: auto 0;
+}
+
+div.voicemail-playback {
+	width: 100%;
+	margin: auto;
+}
+
+div.number {
+	font-size: 5vw;
+}
+
+div.playback-time, div.duration, div.timestamp {
+	font-weight: 300;
+	color: #999;
+}
+
+div.number.small {
+	font-size: 3vw;
+}
+
+div.playback-time {
+	text-align: right;
+	font-size: 3vw;
+}
+
+div.timestamp {
+	width: 30%;
+	text-align: right;
+	margin: auto 0 auto 0;
+}
+
+div.voicemail {
+	display: flex;
+}
+
+div.call-record {
+	width: 100%;
+}
+
+div.call-record.flex {
+	display: flex;
+}
+
+img + div.new {
+	position: absolute;
+	left: 2.75vh;
+	top: 3vh;
+	height: 1.5vh;
+	width: 1.5vh;
+	border-radius: 0.75vh;
+	background-color: rgb(238, 29, 35);
+	z-index: 1;
+}
+
+div.spinner-group {
+	display: flex;
+	position: absolute;
+	top: 4.5vh;
+	left: 1vh;
+}
+
+div.spinner {
+  width: 0.5vh;
+  height: 0.5vh;
+  margin: 0.1vh;
+  border-radius: 0.25vh;
+  background-color: #999;
+  animation-name: fading;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+div.spinner.delay-1 {
+  animation-delay: 0.1s;
+}
+
+div.spinner.delay-2 {
+  animation-delay: 0.2s;
+}
+
+@keyframes fading {
+  0%   {opacity: 1;}
+  100%  {opacity: 0;}
+}
+
+h1 {
+	font-size: 38.4px;
+}
+
+div.voicemails {
+	font-size: 16.8px;
+}
+
+div.voicemail {
+	height: 80px;
+}
+	
+div.number {
+	font-size: 24px;
+}
+
+div.number.small, div.playback-time {
+	font-size: 16px;
+}
+
+div.playback-control img:hover {
+	filter: invert(100%) contrast(150%);
+	cursor: pointer;
+}
+
+img + div.new {
+	top: 2vh;
+}
+
+div.spinner-group {
+	top: 3.6vh;
+}

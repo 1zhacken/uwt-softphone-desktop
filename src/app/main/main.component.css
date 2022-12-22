@@ -1,0 +1,46 @@
+div.container, div.test-button {
+	height: 100vh;
+	height: calc(var(--vh, 1vh) * 100);
+	max-height: 853px;
+	width: 100vw;
+	max-width: 480px;
+	position: relative;
+}
+
+div.header {
+	height: 10%;
+}
+
+div.center {
+	height: 78%;
+}
+
+div.footer {
+	height: 12%;
+}
+
+div.test-button > div.header {
+	height: 12%;
+}
+
+div.test-button > div.body {
+	height: 88%;
+}
+
+@media screen and (min-width: 481px) {
+	div.container {
+		border: solid 0.5px #ddd;
+		box-shadow: 5px 5px 5px #aaaaaa;
+		border-radius: 5px;
+		margin: 0 auto 0 auto;
+		height: 800px;
+	}
+
+	div.test-button {
+		border: solid 0.5px #ddd;
+		box-shadow: 5px 5px 5px #aaaaaa;
+		border-radius: 5px;
+		margin: 0 auto 0 auto;
+		height: 700px;
+	}
+}

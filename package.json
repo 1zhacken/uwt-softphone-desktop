@@ -1,0 +1,102 @@
+{
+  "name": "gcf-softphone",
+  "version": "1.0.3",
+  "main": "src/electron/main.js",
+  "build": {
+    "appId": "com.softphone-uwt",
+    "productName": "GCF Softphone",
+    "mac": {
+      "category": "productivity",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "entitlements.mac.plist",
+      "entitlementsInherit": "entitlements.mac.plist",
+      "icon": "favicon.icns"
+    },
+    "files": [
+      "src/electron/main.js",
+      "src/electron/package.json",
+      "src/electron/preload.js",
+      {
+        "from": "dist/uwt-softphone",
+        "to": "./",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ],
+    "dmg": {
+      "sign": false
+    }
+  },
+  "scripts": {
+    "ng": "ng",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "formatjs": "prettier --write \"src/electron/**/*.js\"",
+    "start": "ng serve",
+    "build": "ng build --prod",
+    "build:electron": "node ./src/electron/build.js",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "macos": "npm run build && yarn dist"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~10.0.3",
+    "@angular/common": "~10.0.3",
+    "@angular/compiler": "~10.0.3",
+    "@angular/core": "~10.0.3",
+    "@angular/forms": "~10.0.3",
+    "@angular/platform-browser": "~10.0.3",
+    "@angular/platform-browser-dynamic": "~10.0.3",
+    "@angular/router": "~10.0.3",
+    "crypto": "^1.0.1",
+    "electron-osx-sign": "^0.5.0",
+    "http": "^0.0.1-security",
+    "jssip": "^3.5.1",
+    "moment": "^2.24.0",
+    "nosleep.js": "^0.9.0",
+    "rxjs": "~6.5.4",
+    "socket.io": "^4.5.4",
+    "tslib": "^2.0.0",
+    "underscore": "^1.10.2",
+    "zlib": "^1.0.5",
+    "zone.js": "~0.10.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.1002.0",
+    "@angular/cli": "~10.0.1",
+    "@angular/compiler-cli": "~10.0.3",
+    "@angular/language-service": "~10.0.3",
+    "@types/electron": "^1.6.10",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "@types/nosleep.js": "^0.9.0",
+    "@types/underscore": "^1.9.4",
+    "codelyzer": "^5.1.2",
+    "electron": "^11.0.1",
+    "electron-builder": "^23.0.6",
+    "electron-installer-dmg": "^3.0.0",
+    "electron-notarize": "^1.0.0",
+    "electron-packager": "^15.1.0",
+    "eslint": "^7.3.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~3.3.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "prettier": "^2.0.5",
+    "protractor": "~7.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~3.9.6"
+  }
+}

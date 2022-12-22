@@ -1,0 +1,19 @@
+div.header {
+  height: 13%;
+}
+
+div.body {
+  height: 87%;
+}
+
+div.body > div.status {
+  height: 8%;
+}
+
+div.body > div.keypad {
+  height: 67%;
+}
+
+div.body > div.controls {
+  height: 25%;
+}

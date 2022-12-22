@@ -1,0 +1,51 @@
+<div class="container">
+	<div *ngIf="!hasIncomingCall" class="phone-controls">
+		<div *ngIf="!callInProgress && !testButton">
+			<div class="col-3"></div>
+			<div class="col-3">
+				<img (click)="dial()" class="button" src="./assets/button-call.svg" alt="Call">
+			</div>
+			<div class="col-3">
+				<img [class.hidden]="!(phoneController.display$ | async)" (click)="backspaceDisplay()" class="backspace" src="./assets/backspace.svg" alt="Backspace">
+			</div>
+		</div>
+		<div *ngIf="!transferInProgress && callInProgress || testButton">
+			<div class="col-3"></div>
+			<div class="col-3">
+				<img (click)="hangUp()" class="button" src="./assets/button-hangup.svg" alt="Hang Up" [class.disabled]="testButton && !callInProgress">
+			</div>
+			<div class="col-3">
+				<img *ngIf="!testButton" (click)="toggleMute()" class="button gray" [src]="'./assets/button-mute-' + (isMuted ? 'on' : 'off') + '.svg'" alt="Mute">
+			</div>
+		</div>
+		<div *ngIf="transferInProgress">
+				<div class="col-3" *ngIf="remoteTransferConnected">
+					<img (click)="merge()" class="button gray" src="./assets/button-merge.svg" alt="Merge">
+					<div class="button-text">Merge</div>
+				</div>
+
+				<div class="col-3" *ngIf="remoteTransferConnected">
+					<img (click)="transfer()" class="button gray" src="./assets/button-transfer.svg" alt="Transfer">
+					<div class="button-text">Transfer</div>
+				</div>
+			<div class="col-3">
+				<img (click)="cancelTransfer()" class="button" src="./assets/button-cancel-red.svg" alt="Cancel">
+				<div class="button-text">Cancel</div>
+			</div>
+		</div>
+	</div>
+	
+	<div *ngIf="hasIncomingCall" class="phone-controls">
+		<div>
+			<div class="col-3">
+				<img (click)="hangUp()" class="button" src="./assets/button-hangup.svg" alt="Hang Up">
+				<div class="button-text">Decline</div>
+			</div>
+			<div class="col-3"></div>
+			<div class="col-3">
+				<img (click)="answer()" class="button" src="./assets/button-call.svg" alt="Call">
+				<div class="button-text">Accept</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,70 @@
+div.details {
+  font-size: 16px;
+  height: 90%;
+  overflow-y: auto;
+}
+
+div.section {
+  border-bottom: solid 0.5px #bbb;
+  padding: 1vh 30px;
+}
+
+div.section:last-of-type {
+  border: none;
+}
+
+div.title {
+  font-size: 18px;
+  color: #36567a;
+  margin-bottom: 0.6vh;
+}
+
+div.title-button {
+  display: flex;
+}
+
+div.button {
+  background-color: #e69506;
+  color: #fff;
+  margin-bottom: 0.6vh;
+  border-radius: 5px;
+  padding: 2px 8px;
+  margin-left: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+div.detail {
+  margin-bottom: 0.4vh;
+}
+
+div.label {
+  font-size: 14px;
+  color: #999;
+}
+
+div.value {
+  color: black;
+}
+
+div.value.multiline {
+  white-space: pre-line;
+}
+
+div.value.note {
+  max-height: 20vh;
+  overflow-y: auto;
+}
+
+div.value.link {
+  cursor: pointer;
+}
+
+div.value.link:hover {
+  color: #e69506;
+}
+
+a:link, a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
